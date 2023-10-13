@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
 
 from spacytextblob.spacytextblob import SpacyTextBlob
 import nltk
@@ -17,12 +12,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt 
 
 
-# In[2]:
-
 
 fichier = open('The-Lord-of-the-Rings.txt', 'r', encoding='utf-8')
-
-# Lire les 24000 premières lignes du fichier
 nombre_lignes_voulues = 24000
 texte = ""
 for i in range(nombre_lignes_voulues):
@@ -30,15 +21,8 @@ for i in range(nombre_lignes_voulues):
     if not ligne:
         break
     texte += ligne
-
-# Fermer le fichier après avoir lu les lignes nécessaires
 fichier.close()
 
-# Afficher le contenu du fichier
-print(texte[:500])
-
-
-# In[3]:
 
 
 nlp = spacy.load('en_core_web_sm')
@@ -46,18 +30,11 @@ nlp.max_length = 3100000
 # Traiter le texte avec spaCy
 doc = nlp(texte)
 
-
-# Identifier les entités nommées (personnages)
 personnages = set()
 for ent in doc.ents:
     if ent.label_ == "PERSON":  # "PER" est l'étiquette pour les entités de type "personne" dans le modèle français
         personnages.add(ent.text)
 
-# Vérifier les personnages identifiés
-print(personnages)
-
-
-# In[11]:
 
 
 Eriador = texte.count("Eriador")
@@ -76,7 +53,6 @@ with sns.xkcd_palette(colors):
 
 
 
-# In[14]:
 
 
 Orc = texte.count("Orc")+texte.count("Orcs")+texte.count("orc")+texte.count("orcs")+texte.count("orcish")
@@ -102,24 +78,7 @@ with sns.xkcd_palette(colors):
 
 
 
-# In[51]:
 
-
-sentiment=[]
-x=0
-text1= TextBlob(texte)
-
-for sentence in text1:
-    text1.sentiment
-
-for sentence in text1.sentences:
-    sentiment.append(sentence.sentiment)
-    
-sentence_df = pd.DataFrame(sentiment)
-sentence_df.describe()
-
-
-# In[13]:
 
 
 def analyze_sentiment(text):
@@ -138,37 +97,23 @@ sentences = nltk.sent_tokenize(texte)
 
 sentiment_scores = []
 
-# Analyser le sentiment pour chaque phrase contenant "Frodo"
 for sentence in sentences:
     if "Frodo" in sentence:
         sentiment_score = analyze_sentiment(sentence)
         sentiment_scores.append(sentiment_score)
     
-# Calculer la moyenne des scores de sentiment pour Frodo
+
 if sentiment_scores:
     average_sentiment = sum(sentiment_scores) / len(sentiment_scores)
 else:
     average_sentiment = 0.0
 
-print(f"Moyenne des sentiments pour Frodo : {average_sentiment}")
 
 
-# In[ ]:
-
-
-#Faire une liste de phrase à tester sur le blob
-
-
-# In[15]:
-
-
-# Liste des personnages
 personnages = ["Frodo", "Gandalf", "Sam", "Aragorn", "Gimli", "Legolas", "Saruman", "Orcs", "Sauron"]
 
-# Initialiser un dictionnaire pour stocker les scores de sentiment associés à chaque personnage
 sentiment_scores = {personnage: [] for personnage in personnages}
 
-# Analyser le sentiment pour chaque phrase et associer le score au personnage correspondant
 for sentence in sentences:
     for personnage in personnages:
         if personnage in sentence:
@@ -177,22 +122,7 @@ for sentence in sentences:
 
 mean_sentiments = {personnage: sum(scores) / len(scores) if scores else 0.0 for personnage, scores in sentiment_scores.items()}
 
-# Créer un DataFrame pandas à partir du dictionnaire des moyennes de sentiment
-df = pd.DataFrame.from_dict(mean_sentiments, orient="index", columns=["Moyenne des sentiments"])
 
-
-# Trier le DataFrame par ordre décroissant de la moyenne de sentiment
-df = df.sort_values(by="Moyenne des sentiments", ascending=False)
-
-# Afficher le tableau avec les moyennes des sentiments pour chaque personnage
-print(df)
-
-
-# In[16]:
-
-
-# Calculer les pourcentages des scores de sentiment pour chaque personnage
-percentages = {}
 for personnage, scores in sentiment_scores.items():
     total_scores = len(scores)
     positive_scores = len([score for score in scores if score > 0])
@@ -208,17 +138,11 @@ for personnage, scores in sentiment_scores.items():
         "Négatif": negative_percentage,
         "Neutre": neutral_percentage
     }
-# Créer un DataFrame pandas à partir du dictionnaire des pourcentages
+
 df = pd.DataFrame.from_dict(percentages, orient="index")
-
-# Trier le DataFrame par ordre décroissant de la moyenne de sentiment positif
 df = df.sort_values(by="Positif", ascending=False)
-
-# Transposer le DataFrame pour inverser abscisse et ordonnée
 df_transposed = df.T
 
-
-# Créer le graphique en barres
 df.plot(kind="bar", stacked=True, colormap="viridis")
 plt.xlabel("Personnages")
 plt.ylabel("Pourcentage des sentiments")
