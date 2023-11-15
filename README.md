@@ -2,10 +2,10 @@
 Pour ce projet nous avons ressorti les vieux grimoirs de Gandalf retrouvé dans a Ereborn.
 Voici les pages codées en elfique que nous avons tenté de traduire: 
 1) une analyse de texte:
-- Tableau Noms propres sur tout les textes
+- Tableau Noms propres sur tout les livres
 - Analyse word LOTR
-- Spacy pour Noms propres
-- Liste personnages_lieu LOTR
+- Nom propre LOTR avec Spacy
+- Liste personnages_lieu de LOTR
 2) Une analyse des sentiments:
   a) avec 'vader lexicon' de nltk:
 - Analyse sentiments LOTR avec nltk
