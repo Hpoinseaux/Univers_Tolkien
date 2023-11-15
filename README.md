@@ -7,10 +7,10 @@ Voici les pages codées en elfique que nous avons tenté de traduire:
 - Nom propre LOTR avec Spacy
 - Liste personnages_lieu de LOTR
 2) Une analyse des sentiments:
-  a. avec 'vader lexicon' de nltk:
+  -a) avec 'vader lexicon' de nltk:
 - Analyse sentiments LOTR avec nltk
 - Analyse sentiments bilbo avec nltk
-  b. avec Spacy:
+  -b) avec Spacy:
 - Analyse sentiments LOTR spacy
 3) Créer un graphe de communauté avec word2vec:
 -word2vec et graphe pour personnages
