@@ -12,7 +12,7 @@ Voici les pages codées en elfique que nous avons tenté de traduire:
 - Analyse sentiments bilbo avec nltk    
  b) avec Spacy:
 - Analyse sentiments LOTR spacy
-3) Créer un graphe de communauté avec word2vec:
+3) Créer un graphe de communauté avec word2vec:  
 -word2vec et graphe pour personnages
 -word2vec personnages tout les livres
 
