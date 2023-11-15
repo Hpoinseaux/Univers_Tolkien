@@ -1,4 +1,4 @@
-# tolkien
+# Projet NLP tolkien
 Pour ce projet nous avons ressorti les vieux grimoirs de Gandalf retrouvé dans a Ereborn.
 Voici les pages codées en elfique que nous avons tenté de traduire: 
 1) une analyse de texte:
