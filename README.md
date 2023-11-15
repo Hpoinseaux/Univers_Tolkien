@@ -6,7 +6,7 @@ Voici les pages codées en elfique que nous avons tenté de traduire:
 - Analyse word LOTR
 - Nom propre LOTR avec Spacy
 - Liste personnages_lieu de LOTR
-2) Une analyse des sentiments:
+2) Une analyse des sentiments:  
  a) avec 'vader lexicon' de nltk:
 - Analyse sentiments LOTR avec nltk
 - Analyse sentiments bilbo avec nltk    
