@@ -15,5 +15,10 @@ Voici les pages codées en elfique que nous avons tenté de traduire:
 3) Créer un graphe de communauté avec word2vec:
 - word2vec et graphe pour personnages
 - word2vec personnages tout les livres
+4) Créer un chatbot enrichit avce les oeuvres de tolkien:
+- appchatbot.py
+5) Vectorisation et clustering des différents oeuvres de Tolkien:
+- vectoriastion+clusters livres
+
 
 Merci pour votre analyse et vos commentaires.
