@@ -1,6 +1,6 @@
 # Projet NLP tolkien
-Pour ce projet nous avons ressorti les vieux grimoirs de Gandalf retrouvé dans a Ereborn.
-Voici les pages codées en elfique que nous avons tenté de traduire: 
+Pour ce projet nous avons ressorti les vieux grimoirs de Gandalf retrouvé à Ereborn afin d'effctuez différentes analyse autour des oeuvres de tolkien:
+
 1) une analyse de texte:
 - Tableau Noms propres sur tout les livres
 - Analyse word LOTR
@@ -20,5 +20,8 @@ Voici les pages codées en elfique que nous avons tenté de traduire:
 5) Vectorisation et clustering des différents oeuvres de Tolkien:
 - vectoriastion+clusters livres
 
+Pour finir notre rapport de fin de projet et nos analyses.
+
+Bonne lecture
 
 Merci pour votre analyse et vos commentaires.
