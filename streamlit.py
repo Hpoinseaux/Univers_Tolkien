@@ -20,8 +20,6 @@ def main():
         analyse_textes()
     elif selected_section == "Analyse de sentiments":
         analyse_sentiments()
-    elif selected_section == "Robot JRR Tolkien":
-        robot_tolkien()
     elif selected_section == "Détection de communauté":
         detection_communaute()
     elif selected_section == "Conclusion":
@@ -36,7 +34,6 @@ def introduction():
     - [Introduction](#introduction)
     - [Analyse des textes](#analyse-des-textes)
     - [Analyse de sentiments](#analyse-de-sentiments)
-    - [Robot JRR Tolkien](#robot-jrr-tolkien)
     - [Détection de communauté](#détection-de-communauté)
     - [Conclusion](#conclusion)
     
@@ -98,8 +95,6 @@ def analyse_textes():
     elif image_choice == "frequence noms propres":
         st.image("6)image_streamlit/hist_freq_30NP_lotr.png", use_column_width=True)
     
-    audio_file = "6)Image_streamlit/A-vrai-dire-il-y-a-bien-une-chose.mp3"
-    st.audio(audio_file, format='audio/mp3', start_time=0)
     
     
 
@@ -162,9 +157,7 @@ def analyse_sentiments():
         plt.legend()
         st.pyplot(plt)
     
-def robot_tolkien():
-    st.header("Robot JRR Tolkien")
-    # Ajoutez le contenu du robot JRR Tolkien ici
+
 
 def detection_communaute():
     st.header("Détection de communauté")
@@ -207,8 +200,6 @@ def detection_communaute():
     
 def conclusion():
     st.header("Conclusion")
-    audio_file = "6)Image_streamlit/Fuyez-pauvres-fous!.mp3"
-    st.audio(audio_file, format='audio/mp3', start_time=0)
     st.write("""
     Dans un premier temps pour l’analyse de sentiments nous pouvons voir qu’elle repère assez bien l' évolution des émotions des personnages qui sont fluctuants avec une phase de rédemption avant leur disparition(dans l’écriture). Cependant elle éprouve des difficultés à inscrire des personnages plutôt négatif ou positif car selon notre hypothèse Tolkien fait de nombreuses description qui rend le personnage plus neutre. Il faudrait peut-être assemblé avec la phrase suivante pour voir si l’analyse est plus pertinente ou supprimer les phrases qui restent trop neutres donc descriptives. Une autre possibilité serait d'entraîner un modèle de dictionnaire spécifique sur les mots de Tolkien afin de rendre l’analyse plus pertinente
     Nous pouvons aussi dire que nos résultats de détection de communauté ne nous permettent pas d’avoir un résultat clair et exploitable car selon notre expertise il devrait avoir une plus grande possibilité de communauté et qu’elle soit mieux identifiée.
