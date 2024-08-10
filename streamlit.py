@@ -6,10 +6,10 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 
 def main():
-    st.image("Image_streamlit/intro.jpg", use_column_width=True)
+    st.image("6)image_streamlit/intro.jpg", use_column_width=True)
     center_title("Projet Tolkien")
     
-    st.sidebar.image("Image_streamlit/jrr.jpg")
+    st.sidebar.image("6)image_streamlit/jrr.jpg")
     st.sidebar.header("Sommaire")
     sections = ["Introduction", "Analyse des textes", "Analyse de sentiments", "Robot JRR Tolkien", "Détection de communauté", "Conclusion"]
     selected_section = st.sidebar.radio("", sections)
@@ -66,22 +66,22 @@ def analyse_textes():
     image_choice = st.radio("Choisissez une image :", ["Anneau", "Arc","Hache","Gandalf"])
 
     if image_choice == "Anneau":
-        st.image("image_streamlit/wc_100mot_ring.png", use_column_width=True)
+        st.image("6)image_streamlit/wc_100mot_ring.png", use_column_width=True)
     elif image_choice == "Arc":
-        st.image("image_streamlit/wc_100mots_arc.png", use_column_width=True)
+        st.image("6)image_streamlit/wc_100mots_arc.png", use_column_width=True)
     elif image_choice == "Hache":
-        st.image("image_streamlit/wc_50NP_all.png", use_column_width=True)
+        st.image("6)image_streamlit/wc_50NP_all.png", use_column_width=True)
     elif image_choice == "Gandalf":
-        st.image("image_streamlit/wc_lotr_50mots.png", use_column_width=True)    
+        st.image("6)image_streamlit/wc_lotr_50mots.png", use_column_width=True)    
     
     image_choice = st.selectbox("Choisissez un graphe de tous les livres :", ["Histogramme occurence types des mots par livre", "occurence type des mots"])
     if image_choice == "Histogramme occurence types des mots par livre":
-        st.image("image_streamlit/hist_type_par_livre.png", use_column_width=True)
+        st.image("6)image_streamlit/hist_type_par_livre.png", use_column_width=True)
     elif image_choice == "occurence type des mots":
-        st.image("image_streamlit/hist_type_all.png", use_column_width=True)
+        st.image("6)image_streamlit/hist_type_all.png", use_column_width=True)
     
     st.write("Tableau occurences noms par livre:")
-    df = pd.read_csv("image_streamlit/noms.csv")  
+    df = pd.read_csv("6)image_streamlit/noms.csv")  
     def obtenir_lignes_au_hasard():
         return df.sample(15)
     if st.button("Changer les 15 noms aléatoires"):
@@ -92,13 +92,13 @@ def analyse_textes():
         
     image_choice = st.selectbox("Choisissez un graphe LOTR :", ["occurence lieux", "occurence race","frequence noms propres"])
     if image_choice == "occurence lieux":
-        st.image("image_streamlit/graphe_occ_lieux.png", use_column_width=True)
+        st.image("6)image_streamlit/graphe_occ_lieux.png", use_column_width=True)
     elif image_choice == "occurence race":
-        st.image("image_streamlit/graphe_occ_race.png", use_column_width=True)
+        st.image("6)image_streamlit/graphe_occ_race.png", use_column_width=True)
     elif image_choice == "frequence noms propres":
-        st.image("image_streamlit/hist_freq_30NP_lotr.png", use_column_width=True)
+        st.image("6)image_streamlit/hist_freq_30NP_lotr.png", use_column_width=True)
     
-    audio_file = r"Image_streamlit\A-vrai-dire-il-y-a-bien-une-chose.mp3"
+    audio_file = "6)Image_streamlit/A-vrai-dire-il-y-a-bien-une-chose.mp3"
     st.audio(audio_file, format='audio/mp3', start_time=0)
     
     
@@ -113,8 +113,8 @@ def analyse_sentiments():
     Voici une première analyse :
     """)
     st.write("Comparatif Spacy et NLTK:")
-    image_path1 = "image_streamlit/graphe_pourcentage_sent_nltk.png"
-    image_path2 = "image_streamlit/graphe_pourcentage_sent_spacy.png"
+    image_path1 = "6)image_streamlit/graphe_pourcentage_sent_nltk.png"
+    image_path2 = "6)image_streamlit/graphe_pourcentage_sent_spacy.png"
     col1, col2 = st.columns(2)
     with col1:
         st.image(image_path1, caption="NLTK", use_column_width=True)
@@ -129,7 +129,7 @@ def analyse_sentiments():
     show_image_2 = st.checkbox("The Hobbit")
 
     if show_image_1:
-        with open("image_streamlit/characters_sentiments.pkl", "rb") as file:
+        with open("6)image_streamlit/characters_sentiments.pkl", "rb") as file:
             characters_sentiments = pickle.load(file)
         selected_characters = st.multiselect("Choisissez les personnages à afficher", list(characters_sentiments.keys()))
         plt.figure(figsize=(12, 8))
@@ -146,7 +146,7 @@ def analyse_sentiments():
         st.pyplot(plt)
 
     if show_image_2:
-        with open("image_streamlit/characters_sentiments_bilbo.pkl", "rb") as file:
+        with open("6)image_streamlit/characters_sentiments_bilbo.pkl", "rb") as file:
             characters_sentiments = pickle.load(file)
         selected_characters = st.multiselect("Choisissez les personnages à afficher", list(characters_sentiments.keys()))
         plt.figure(figsize=(12, 8))
@@ -177,12 +177,12 @@ def detection_communaute():
 
     for image in images_to_display:
         if image == "Louvain":
-            st.image("image_streamlit/louvain_lotr.png", use_column_width=True)
+            st.image("6)image_streamlit/louvain_lotr.png", use_column_width=True)
         elif image == "Fruchtmann & Reynolds":
             st.image("image_streamlit/freuchtmann_lotr.png", use_column_width=True)
 
     if st.button("Afficher graphe LOTR 3D"):
-        with open('image_streamlit/figure_3d.picklelotr', 'rb') as file:
+        with open('6)image_streamlit/figure_3d.picklelotr', 'rb') as file:
             loaded_fig = pickle.load(file)
         loaded_fig.show()
     st.write("""
@@ -191,9 +191,9 @@ def detection_communaute():
     Par la suite nous avons essayé de savoir la détection des communautés sur tous les personnages des livres avec la méthode Louvain :
     """)
     if st.button("Afficher graphe de tous les livres"):
-        st.image("image_streamlit/Louvain_all.png", use_column_width=True)
+        st.image("6)image_streamlit/Louvain_all.png", use_column_width=True)
     if st.button("Afficher graphe de tous les livres 3D"):
-        with open('image_streamlit/figure_3dtolkien.pickle', 'rb') as file:
+        with open('6)image_streamlit/figure_3dtolkien.pickle', 'rb') as file:
             loaded_fig = pickle.load(file)
         loaded_fig.show()
     st.write("""
@@ -202,12 +202,12 @@ def detection_communaute():
     Par la suite nous avons aussi chercher par lieux avec la méthode Louvain :
     """)
     if st.button("Afficher graphe lieux"):
-        st.image("image_streamlit/louvain_lieux_lotr.png", use_column_width=True)
+        st.image("6)image_streamlit/louvain_lieux_lotr.png", use_column_width=True)
 
     
 def conclusion():
     st.header("Conclusion")
-    audio_file = r"Image_streamlit\Fuyez-pauvres-fous!.mp3"
+    audio_file = "6)Image_streamlit/Fuyez-pauvres-fous!.mp3"
     st.audio(audio_file, format='audio/mp3', start_time=0)
     st.write("""
     Dans un premier temps pour l’analyse de sentiments nous pouvons voir qu’elle repère assez bien l' évolution des émotions des personnages qui sont fluctuants avec une phase de rédemption avant leur disparition(dans l’écriture). Cependant elle éprouve des difficultés à inscrire des personnages plutôt négatif ou positif car selon notre hypothèse Tolkien fait de nombreuses description qui rend le personnage plus neutre. Il faudrait peut-être assemblé avec la phrase suivante pour voir si l’analyse est plus pertinente ou supprimer les phrases qui restent trop neutres donc descriptives. Une autre possibilité serait d'entraîner un modèle de dictionnaire spécifique sur les mots de Tolkien afin de rendre l’analyse plus pertinente
