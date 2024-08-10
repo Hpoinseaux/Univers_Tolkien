@@ -181,7 +181,7 @@ def detection_communaute():
                 loaded_fig = pickle.load(file)
 
             # Si loaded_fig est du HTML ou contient du code HTML pour le rendu
-            html_str = loaded_fig.to_html()
+            html_str = loaded_fig.to_html()  # Assurez-vous que `loaded_fig` a la méthode `to_html()`
             components.html(html_str, height=600)
         except FileNotFoundError:
             st.error("Le fichier figure_3dlotr.pickle est introuvable.")
