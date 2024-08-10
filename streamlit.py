@@ -175,19 +175,10 @@ def detection_communaute():
             st.image("6)image_streamlit/freuchtmann_lotr.png", use_column_width=True)
 
     if st.button("Afficher graphe LOTR 3D"):
-        try:
-            with open('6)image_streamlit/figure_3dlotr.pickle', 'rb') as file:
-                loaded_fig = pickle.load(file)
-            
-            # Vérifiez si l'objet est une instance de go.Figure
-            if isinstance(loaded_fig, go.Figure):
-                st.plotly_chart(loaded_fig)
-            else:
-                st.write("L'objet chargé n'est pas un graphique Plotly.")
-        except FileNotFoundError:
-            st.error("Le fichier figure_3dlotr.pickle est introuvable.")
-        except Exception as e:
-            st.error(f"Une erreur est survenue : {e}")
+        with open('6)image_streamlit/figure_3dlotr.pickle', 'rb') as file:
+            loaded_fig = pickle.load(file)
+            st.plotly_chart(loaded_fig)
+
     st.write("""
     Dans ces graphes assez similaires, nous pouvons voir que parfois les communautés sont réunies par race (exemple : hobbit) ou par liens récurrents dans le livre (gimli et legolas). Elle a pu identifier 3 grandes communautés ce qui ne représente pas forcément une séparation par race ou de proximité dans le livre. La détection reste encore difficile. Nous constatons cependant que la plupart des personnages principaux sont situés au centre sur le graphe de fruchterman-reingold qui montre une reconnaissance des personnages principaux sans forcément faire des liens entre eux (séparé en deux communautés).
  
