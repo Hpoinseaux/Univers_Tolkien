@@ -11,7 +11,7 @@ def main():
     
     st.sidebar.image("6)image_streamlit/jrr.jpg")
     st.sidebar.header("Sommaire")
-    sections = ["Introduction", "Analyse des textes", "Analyse de sentiments", "Robot JRR Tolkien", "Détection de communauté", "Conclusion"]
+    sections = ["Introduction", "Analyse des textes", "Analyse de sentiments", "Détection de communauté", "Conclusion"]
     selected_section = st.sidebar.radio("", sections)
 
     if selected_section == "Introduction":
@@ -172,10 +172,10 @@ def detection_communaute():
         if image == "Louvain":
             st.image("6)image_streamlit/louvain_lotr.png", use_column_width=True)
         elif image == "Fruchtmann & Reynolds":
-            st.image("image_streamlit/freuchtmann_lotr.png", use_column_width=True)
+            st.image("6)image_streamlit/freuchtmann_lotr.png", use_column_width=True)
 
     if st.button("Afficher graphe LOTR 3D"):
-        with open('6)image_streamlit/figure_3d.picklelotr', 'rb') as file:
+        with open('6)image_streamlit/figure_3dlotr.pickle', 'rb') as file:
             loaded_fig = pickle.load(file)
         loaded_fig.show()
     st.write("""
@@ -184,7 +184,7 @@ def detection_communaute():
     Par la suite nous avons essayé de savoir la détection des communautés sur tous les personnages des livres avec la méthode Louvain :
     """)
     if st.button("Afficher graphe de tous les livres"):
-        st.image("6)image_streamlit/Louvain_all.png", use_column_width=True)
+        st.image("6)image_streamlit/louvain_all.png", use_column_width=True)
     if st.button("Afficher graphe de tous les livres 3D"):
         with open('6)image_streamlit/figure_3dtolkien.pickle', 'rb') as file:
             loaded_fig = pickle.load(file)
