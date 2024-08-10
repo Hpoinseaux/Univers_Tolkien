@@ -6,10 +6,10 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 
 def main():
-    st.image(r"Image_streamlit\intro.jpg", use_column_width=True)
+    st.image("Image_streamlit/intro.jpg", use_column_width=True)
     center_title("Projet Tolkien")
     
-    st.sidebar.image(r"Image_streamlit\jrr.jpg")
+    st.sidebar.image("Image_streamlit/jrr.jpg")
     st.sidebar.header("Sommaire")
     sections = ["Introduction", "Analyse des textes", "Analyse de sentiments", "Robot JRR Tolkien", "Détection de communauté", "Conclusion"]
     selected_section = st.sidebar.radio("", sections)
