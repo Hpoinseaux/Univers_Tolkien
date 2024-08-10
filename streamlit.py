@@ -189,7 +189,7 @@ def detection_communaute():
     if st.button("Afficher graphe de tous les livres 3D"):
         with open('6)image_streamlit/figure_3dtolkien.pickle', 'rb') as file:
             loaded_fig = pickle.load(file)
-        loaded_fig.show()
+            st.plotly_chart(loaded_fig) 
     st.write("""
     Dans ce graphe nous avons limité aux 20 personnages les plus récurrents de chaque livre. Nous constatons aussi qu’il est resté sur la détection de 3 communautés avec une faiblement représenté et une surreprésenté. Il éprouve donc des difficultés à relier des communautés entre elles que ce soit par race, par période, par livre. Nous constatons quand même que là aussi ce sont les races qui ressortent le plus avec celle des humaines et des hobbits en vert sur la droite qui sont plus compacts.
   
