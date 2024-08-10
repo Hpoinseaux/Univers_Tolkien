@@ -95,6 +95,8 @@ def analyse_textes():
     elif image_choice == "frequence noms propres":
         st.image("6)image_streamlit/hist_freq_30NP_lotr.png", use_column_width=True)
     
+    audio_file = "6)image_streamlit/A-vrai-dire-il-y-a-bien-une-chose.mp3"
+    st.audio(audio_file, format='audio/mp3', start_time=0)
     
     
 
