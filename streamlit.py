@@ -202,12 +202,18 @@ def detection_communaute():
 def conclusion():
     st.header("Conclusion")
     st.write("""
-    Dans un premier temps pour l’analyse de sentiments nous pouvons voir qu’elle repère assez bien l' évolution des émotions des personnages qui sont fluctuants avec une phase de rédemption avant leur disparition(dans l’écriture). Cependant elle éprouve des difficultés à inscrire des personnages plutôt négatif ou positif car selon notre hypothèse Tolkien fait de nombreuses description qui rend le personnage plus neutre. Il faudrait peut-être assemblé avec la phrase suivante pour voir si l’analyse est plus pertinente ou supprimer les phrases qui restent trop neutres donc descriptives. Une autre possibilité serait d'entraîner un modèle de dictionnaire spécifique sur les mots de Tolkien afin de rendre l’analyse plus pertinente
+    Dans un premier temps pour l’analyse de sentiments nous pouvons voir qu’elle repère assez bien l' évolution des émotions des personnages qui sont fluctuants avec une phase de rédemption avant leur disparition(dans l’écriture). Cependant elle éprouve des difficultés à inscrire des personnages plutôt négatif ou positif car selon notre hypothèse, Tolkien fait de nombreuses description qui rend le personnage plus neutre.
+             
+    Il faudrait peut-être assemblé avec la phrase suivante pour voir si l’analyse est plus pertinente ou supprimer les phrases qui restent trop neutres donc descriptives. Une autre possibilité serait d'entraîner un modèle de dictionnaire spécifique sur les mots de Tolkien afin de rendre l’analyse plus pertinente.
+    
     Nous pouvons aussi dire que nos résultats de détection de communauté ne nous permettent pas d’avoir un résultat clair et exploitable car selon notre expertise il devrait avoir une plus grande possibilité de communauté et qu’elle soit mieux identifiée.
+             
     Il est donc difficile d’exploiter nos outils d’analyse de texte en l’état, il faudrait un temps supplémentaire pour tester et approfondir nos démarches afin de pouvoir rendre l’algorithme plus précis.
+             
     Au travers ses étapes nous avons pu constater dans un premier temps qu’il était important de bien connaître et comprendre le domaine dans lequel nous allons travailler afin d’être plus pertinents dans notre analyse et de faire les choix les plus appropriés afin de répondre  à des questions pertinentes . 
     Nous avons pu constater l’importance de l’analyse et l’expertise humaine sur les résultats  afin de mieux interpréter, d’évaluer et d’affiner certains paramètres pour la détection de communauté.
 """)
+    st.imagest.image("6)image_streamlit/fin.png", use_column_width=True)
 
 
 if __name__ == "__main__":
