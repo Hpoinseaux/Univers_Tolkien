@@ -217,7 +217,7 @@ def conclusion():
     Au travers ses étapes nous avons pu constater dans un premier temps qu’il était important de bien connaître et comprendre le domaine dans lequel nous allons travailler afin d’être plus pertinents dans notre analyse et de faire les choix les plus appropriés afin de répondre  à des questions pertinentes . 
     Nous avons pu constater l’importance de l’analyse et l’expertise humaine sur les résultats  afin de mieux interpréter, d’évaluer et d’affiner certains paramètres pour la détection de communauté.
 """)
-    st.imagest.image("6)image_streamlit/fin.jpg", use_column_width=True)
+    st.image("6)image_streamlit/fin.jpg", use_column_width=True)
     audio_file = "6)image_streamlit/Adieu-Ne-vous-detournez-pas-de-votre-but.mp3"
     st.audio(audio_file, format='audio/mp3', start_time=0)
 
