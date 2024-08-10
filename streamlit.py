@@ -176,13 +176,14 @@ def detection_communaute():
 
     if st.button("Afficher graphe LOTR 3D"):
         try:
-            # Assurez-vous que le chemin est correct
             with open('6)image_streamlit/figure_3dlotr.pickle', 'rb') as file:
                 loaded_fig = pickle.load(file)
-
-            # Si loaded_fig est du HTML ou contient du code HTML pour le rendu
-            html_str = loaded_fig.to_html()  # Assurez-vous que `loaded_fig` a la méthode `to_html()`
-            components.html(html_str, height=600)
+            
+            # Vérifiez si l'objet est une instance de go.Figure
+            if isinstance(loaded_fig, go.Figure):
+                st.plotly_chart(loaded_fig)
+            else:
+                st.write("L'objet chargé n'est pas un graphique Plotly.")
         except FileNotFoundError:
             st.error("Le fichier figure_3dlotr.pickle est introuvable.")
         except Exception as e:
