@@ -225,5 +225,7 @@ def conclusion():
     audio_file = "6)image_streamlit/Adieu-Ne-vous-detournez-pas-de-votre-but.mp3"
     st.audio(audio_file, format='audio/mp3', start_time=0)
 
+st.markdown("<h3 style='text-align: right; font-size: 14px;'>Hadrien Poinseaux</h3>", unsafe_allow_html=True)
+
 if __name__ == "__main__":
     main()
