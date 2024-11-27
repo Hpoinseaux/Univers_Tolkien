@@ -37,9 +37,11 @@ def introduction():
     - [Détection de communauté](#détection-de-communauté)
     - [Conclusion](#conclusion)
     
-    Bienvenue dans le projet Tolkien. Ce projet explore différents aspects des œuvres de JRR Tolkien à travers diverses analyses et applications.
-    
-    Nous allons d'abord vous présenter notre analyse de texte. Ensuite, nous vous montrerons les divers algorithmes que nous avons utilisés pour répondre à certaines de nos questions. Enfin, nous conclurons sur l'apport que ce projet a eu sur notre enrichissement personnel.
+   Bienvenue dans le Projet Tolkien, une initiative ambitieuse qui vous invite à découvrir les richesses cachées des œuvres de J.R.R. Tolkien, à travers une analyse profonde et innovante. Ce projet, qui allie littérature et technologie, vous propose une nouvelle façon de lire et d’interpréter les textes de l’auteur du Seigneur des Anneaux.
+
+Nous commencerons par vous offrir une analyse détaillée d’un extrait clé de son œuvre, avant de vous dévoiler les algorithmes d’intelligence artificielle que nous avons mis en place pour répondre à des questions complexes liées à ces textes. Enfin, nous partagerons avec vous les enseignements personnels tirés de cette aventure intellectuelle et technologique.
+
+Rejoignez-nous dans ce voyage où la magie de Tolkien rencontre la puissance de l'IA, pour une expérience de lecture et d’analyse inédite !
     """)
   
        
