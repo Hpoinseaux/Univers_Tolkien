@@ -28,7 +28,7 @@ def main():
 def center_title(title):
     st.markdown(f"<h1 style='text-align: center;'>{title}</h1>", unsafe_allow_html=True)
 def introduction():
-    st.header("Introduction")
+    st.header("Plongée dans l’univers de Tolkien : une exploration fascinante à travers l’intelligence artificielle")
     st.write("""
     **Sommaire :**
     - [Introduction](#introduction)
@@ -39,27 +39,28 @@ def introduction():
     
    Bienvenue dans le Projet Tolkien, une initiative ambitieuse qui vous invite à découvrir les richesses cachées des œuvres de J.R.R. Tolkien, à travers une analyse profonde et innovante. Ce projet, qui allie littérature et technologie, vous propose une nouvelle façon de lire et d’interpréter les textes de l’auteur du Seigneur des Anneaux.
 
-Nous commencerons par vous offrir une analyse détaillée d’un extrait clé de son œuvre, avant de vous dévoiler les algorithmes d’intelligence artificielle que nous avons mis en place pour répondre à des questions complexes liées à ces textes. Enfin, nous partagerons avec vous les enseignements personnels tirés de cette aventure intellectuelle et technologique.
+    Nous commencerons par vous offrir une analyse détaillée d’un extrait clé de son œuvre, avant de vous dévoiler les algorithmes d’intelligence artificielle que nous avons mis en place pour répondre à des questions complexes liées à ces textes. Enfin, nous partagerons avec vous les enseignements personnels tirés de cette aventure intellectuelle et technologique.
 
-Rejoignez-nous dans ce voyage où la magie de Tolkien rencontre la puissance de l'IA, pour une expérience de lecture et d’analyse inédite !
+    Rejoignez-nous dans ce voyage où la magie de Tolkien rencontre la puissance de l'IA, pour une expérience de lecture et d’analyse inédite !
     """)
   
        
 def analyse_textes():
     st.header("Analyse des textes")
     st.write("""
-    Dans un premier nous avons effectué une analyse de texte pour arriver à établir qu'elle était les questions que l'on pouvait se poser et en quoi le NLP pourrait analyser et répondre à nos questions. Nous nous sommes d'abord questionnés sur l'étude des différents textes qui sont :
-    - The Hobbit (1937)
-    - The Lord of the Rings (1954-1955)
-    - The Silmarillion (1977)
-    - Unfinished Tales (1980)
-    - The Children of Húrin (2007)
-    - The Fall of Gondolin (2018)
-    - The Letters of J.R.R. Tolkien (1981)
+    Dans un premier temps, nous avons réalisé une analyse approfondie des textes de Tolkien afin d'identifier les questions pertinentes que l’on pourrait explorer et de déterminer en quoi les techniques de traitement du langage naturel (NLP) pouvaient nous aider à y répondre. Les œuvres sur lesquelles nous avons concentré notre étude sont les suivantes :
 
-    Pour cela nous nous sommes appuyés sur Spacy, nltk pour l'analyse de texte ,  Wordcloud et matplotlib pour les visuels.
+    The Hobbit (1937)
+    The Lord of the Rings (1954-1955)
+    The Silmarillion (1977)
+    Unfinished Tales (1980)
+    The Children of Húrin (2007)
+    The Fall of Gondolin (2018)
+    The Letters of J.R.R. Tolkien (1981)
 
-    Voici nos premières analyses :
+    Pour mener à bien cette analyse, nous avons utilisé des outils tels que Spacy et nltk pour le traitement du texte, ainsi que Wordcloud et matplotlib pour la création de visuels permettant de mieux illustrer nos résultats.
+
+    Voici les premières conclusions issues de cette analyse :
     """)
      # Affichage des images en fonction du choix de l'utilisateur
     image_choice = st.radio("Choisissez une image :", ["Anneau", "Arc","Hache","Gandalf"])
@@ -105,11 +106,13 @@ def analyse_textes():
 def analyse_sentiments():
     st.header("Analyse de sentiments")
     st.write("""
-    Dans cette partie nous allons aborder le NLP afin de réaliser une analyse de sentiments sur les différents personnages de LOTR et du Hobbit.
-    De part nos connaissances nous savons que les personnages de LOTR et du hobbit de sont pas toujours positifs ou négatifs. Ils passent souvent par des phases négatives puis redeviennent positives comme une forme de rédemption.
+    Dans cette section, nous allons explorer l’utilisation du traitement du langage naturel (NLP) pour réaliser une analyse des sentiments des personnages principaux du Seigneur des Anneaux (LOTR) et du Hobbit.
 
-    Dans une première phase nous allons voir si l’analyse de sentiments arrive à détecter si un personnage est plutôt positif ou négatif par rapport au texte.
-    Voici une première analyse :
+    En nous appuyant sur nos connaissances des œuvres, nous savons que les personnages de ces deux récits ne sont pas uniquement positifs ou négatifs. Ils traversent fréquemment des périodes sombres avant de connaître des moments de rédemption, reflétant ainsi une évolution complexe de leurs émotions.
+
+    Dans un premier temps, nous allons tester si l’analyse des sentiments peut effectivement identifier si un personnage est perçu comme étant plutôt positif ou négatif, selon le contexte du texte.
+
+    Voici les premiers résultats de cette analyse :
     """)
     st.write("Comparatif Spacy et NLTK:")
     image_path1 = "6)image_streamlit/graphe_pourcentage_sent_nltk.png"
@@ -120,7 +123,7 @@ def analyse_sentiments():
     with col2:
         st.image(image_path2, caption="Spacy", use_column_width=True)
     st.write("""
-    Sur ces deux tableaux, nous pouvons voir que Spacy met en avant des personnages censés être négatifs comme des personnages positifs. Nltk se montre lui plus performant pour repérer les mots plus négatifs. Nous constatons aussi que les personnages restent régulièrement assez mitigés avec une proximité entre les sentiments négatifs et positifs.( 10% d'écart environ au maximum). <on peut aussi constater de nombreux sentiments neutres(environ 40% par personnage), on peut donc émettre l'hypothèse que l'algorithme montre encore des difficultés à repérer les sentiments positif et négatif dans le style d'écriture de J.R.R Tolkien qui est plus ancien.
+    Les deux tableaux montrent que Spacy tend à classer certains personnages initialement perçus comme négatifs parmi les personnages positifs, tandis que nltk se révèle plus efficace pour identifier les termes négatifs. Nous remarquons également que les sentiments des personnages restent souvent assez nuancés, avec une différence d’environ 10 % entre les sentiments négatifs et positifs. De plus, une proportion importante de sentiments neutres apparaît, représentant environ 40 % des évaluations pour chaque personnage. Cela suggère que l’algorithme rencontre encore des difficultés à distinguer clairement les sentiments positifs et négatifs, peut-être en raison du style d’écriture plus ancien de J.R.R. Tolkien, qui pourrait influencer l’interprétation des sentiments.
     """)
     
     st.write("Evolution des sentiments par chapitres avec NLTK:")
@@ -166,9 +169,9 @@ def analyse_sentiments():
 def detection_communaute():
     st.header("Détection de communauté")
     st.write("""
-    Dans cette partie nous avons effectué divers graphes afin de savoir comment les algorithmes de détection de communauté allaient détecter les communautés en s’appuyant sur une vectorisation des mots avec  Word2vec et la création de graphe avec NetworkX.
- 
-    Dans un premier temps avons effectué un graphe avec une détection de communauté sur LOTR :
+    Dans cette section, nous avons créé plusieurs graphiques pour analyser la manière dont les algorithmes de détection de communautés identifient les groupes au sein des textes. Pour ce faire, nous avons utilisé la vectorisation des mots avec Word2Vec et la génération de graphes à l’aide de NetworkX.
+
+    Dans un premier temps, nous avons réalisé un graphe de détection de communautés basé sur l’œuvre Le Seigneur des Anneaux (LOTR) :
     """)
     images_to_display = st.multiselect("Choisissez un graphe :", ["Louvain", "Fruchtmann & Reynolds"])
 
@@ -184,9 +187,9 @@ def detection_communaute():
             st.plotly_chart(loaded_fig)
 
     st.write("""
-    Dans ces graphes assez similaires, nous pouvons voir que parfois les communautés sont réunies par race (exemple : hobbit) ou par liens récurrents dans le livre (gimli et legolas). Elle a pu identifier 3 grandes communautés ce qui ne représente pas forcément une séparation par race ou de proximité dans le livre. La détection reste encore difficile. Nous constatons cependant que la plupart des personnages principaux sont situés au centre sur le graphe de fruchterman-reingold qui montre une reconnaissance des personnages principaux sans forcément faire des liens entre eux (séparé en deux communautés).
- 
-    Par la suite nous avons essayé de savoir la détection des communautés sur tous les personnages des livres avec la méthode Louvain :
+    Les graphes que nous avons obtenus, bien que relativement similaires, montrent que certaines communautés semblent se regrouper en fonction de caractéristiques comme la race (par exemple, les hobbits) ou des liens récurrents dans l'intrigue (comme l'amitié entre Gimli et Legolas). L'algorithme a réussi à identifier trois grandes communautés, mais ces groupes ne correspondent pas nécessairement à une séparation par race ou à une proximité évidente dans l'histoire. La détection des communautés reste donc complexe. Cependant, nous remarquons que les personnages principaux se situent généralement au centre du graphe de Fruchterman-Reingold, ce qui témoigne d'une reconnaissance des personnages clés, sans pour autant établir de liens directs entre eux, les plaçant ainsi dans deux communautés distinctes.
+
+    Nous avons ensuite exploré la détection des communautés pour l'ensemble des personnages à l’aide de la méthode Louvain :
     """)
     if st.button("Afficher graphe de tous les livres"):
         st.image("6)image_streamlit/louvain_all.png", use_column_width=True)
@@ -195,9 +198,9 @@ def detection_communaute():
             loaded_fig = pickle.load(file)
             st.plotly_chart(loaded_fig) 
     st.write("""
-    Dans ce graphe nous avons limité aux 20 personnages les plus récurrents de chaque livre. Nous constatons aussi qu’il est resté sur la détection de 3 communautés avec une faiblement représenté et une surreprésenté. Il éprouve donc des difficultés à relier des communautés entre elles que ce soit par race, par période, par livre. Nous constatons quand même que là aussi ce sont les races qui ressortent le plus avec celle des humaines et des hobbits en vert sur la droite qui sont plus compacts.
-  
-    Par la suite nous avons aussi chercher par lieux avec la méthode Louvain :
+    Dans ce graphe, nous avons limité l’analyse aux 20 personnages les plus récurrents de chaque livre. Il apparaît que l’algorithme a détecté trois communautés, dont une est faiblement représentée et l’autre surreprésentée. Cela suggère des difficultés à établir des liens entre les communautés, que ce soit par race, époque ou livre. Cependant, on remarque que les groupes les plus distincts sont ceux des races humaines et des hobbits, représentées en vert sur la droite du graphe, qui forment des clusters plus compacts.
+
+    Par la suite, nous avons également exploré l’analyse des communautés par lieux en utilisant la méthode Louvain :
     """)
     if st.button("Afficher graphe lieux"):
         st.image("6)image_streamlit/louvain_lieux_lotr.png", use_column_width=True)
@@ -208,16 +211,15 @@ def conclusion():
     audio_file = "6)image_streamlit/Fuyez-pauvres-fous!.mp3"
     st.audio(audio_file, format='audio/mp3', start_time=0)
     st.write("""
-    Dans un premier temps pour l’analyse de sentiments nous pouvons voir qu’elle repère assez bien l' évolution des émotions des personnages qui sont fluctuants avec une phase de rédemption avant leur disparition(dans l’écriture). Cependant elle éprouve des difficultés à inscrire des personnages plutôt négatif ou positif car selon notre hypothèse, Tolkien fait de nombreuses description qui rend le personnage plus neutre.
-             
-    Il faudrait peut-être assemblé avec la phrase suivante pour voir si l’analyse est plus pertinente ou supprimer les phrases qui restent trop neutres donc descriptives. Une autre possibilité serait d'entraîner un modèle de dictionnaire spécifique sur les mots de Tolkien afin de rendre l’analyse plus pertinente.
-    
-    Nous pouvons aussi dire que nos résultats de détection de communauté ne nous permettent pas d’avoir un résultat clair et exploitable car selon notre expertise il devrait avoir une plus grande possibilité de communauté et qu’elle soit mieux identifiée.
-             
-    Il est donc difficile d’exploiter nos outils d’analyse de texte en l’état, il faudrait un temps supplémentaire pour tester et approfondir nos démarches afin de pouvoir rendre l’algorithme plus précis.
-             
-    Au travers ses étapes nous avons pu constater dans un premier temps qu’il était important de bien connaître et comprendre le domaine dans lequel nous allons travailler afin d’être plus pertinents dans notre analyse et de faire les choix les plus appropriés afin de répondre  à des questions pertinentes . 
-    Nous avons pu constater l’importance de l’analyse et l’expertise humaine sur les résultats  afin de mieux interpréter, d’évaluer et d’affiner certains paramètres pour la détection de communauté.
+    Dans un premier temps, l’analyse de sentiments a montré une capacité intéressante à suivre l’évolution des émotions des personnages, souvent fluctuantes, avec une phase de rédemption avant leur disparition dans l’écriture. Toutefois, l’algorithme rencontre des difficultés à catégoriser les personnages comme strictement négatifs ou positifs, ce qui pourrait s'expliquer par le style descriptif de Tolkien, qui tend à rendre ses personnages plus nuancés et complexes.
+
+    Il serait peut-être pertinent de combiner cette analyse avec les phrases suivantes pour affiner les résultats ou, à l’inverse, de supprimer les phrases trop neutres ou descriptives. Une autre option pourrait être de créer un modèle d'analyse spécifique, basé sur un dictionnaire de mots propres à l'univers de Tolkien, afin d'apporter plus de précision et de pertinence à l’analyse.
+
+    En ce qui concerne la détection de communautés, nos résultats n'ont pas permis d’aboutir à des conclusions claires et exploitables. D’après notre expertise, une analyse plus fine devrait révéler une plus grande diversité de communautés, mieux définies. Il est donc évident que les outils d’analyse de texte, dans leur état actuel, nécessitent encore du travail pour atteindre une précision suffisante.
+
+    Cette exploration a néanmoins révélé une vérité fondamentale : pour mener une analyse véritablement pertinente, il est crucial de bien comprendre le domaine d’étude. Cette connaissance permet de faire les choix les plus adaptés pour répondre aux questions les plus profondes. Nous avons également pris conscience de l'importance de l’analyse et de l’expertise humaines dans l’interprétation des résultats. L'humain reste indispensable pour affiner les paramètres et tirer des enseignements significatifs des données.
+
+    Ainsi, au fil de ces étapes, nous nous retrouvons face à un univers de possibilités infinies, semblable à celui de Tolkien : un monde où l'intelligence artificielle, à l’instar des personnages de la Terre du Milieu, traverse des épreuves et des rédemptions, toujours en quête d’un équilibre entre la machine et l’humanité. Peut-être qu’en approfondissant nos recherches, nous pourrons un jour donner à nos algorithmes une compréhension aussi profonde et nuancée des émotions humaines que celle de l’auteur lui-même.
 """)
     st.image("6)image_streamlit/fin.jpg", use_column_width=True)
     audio_file = "6)image_streamlit/Adieu-Ne-vous-detournez-pas-de-votre-but.mp3"
